@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <header>
+        <div class="header">
+            <div class="image">
+                <img src="{{url_for('static', filename='logo.png')}}" alt="image de logo">
+            </div>
+            
+            <div class="flex mx-[5%] ">
+                <a class="forme"  href="acceuil.html">acceuil</a>
+                
+                <a class="forme" href= "commanditaire.html">commanditaire</a>
+
+                <a class="forme"  href="equipe.html">équipe</a>
+
+                <a class="forme"  href="galerie.html">galerie</a>
+
+                <a class="forme"  href="voiture.html">voiture</a>
+
+                <a class="forme"  href="contact.html">contact</a>
+
+
+
+            </div>
+           
+        </div>
+    
+    
+    
+    <main>
+       
+        <div class="texte">
+            
+            <img class="image" src="" alt="logo">
+        
+            
+            <div >
+                
+                {% block content%} {%endblock%}
+            </div>
+            
+        </div>
+    
+</body>
+</html>
+<style>
+    .image{
+        width: 100%;
+        height: 100%;
+    }
+
+</style>
