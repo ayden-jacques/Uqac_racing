@@ -7,7 +7,7 @@
   
         <!-- 1. Conteneur Logo (utilisez w-auto pour laisser le logo prendre sa place) -->
         <div class="flex-shrink-0">
-            <img src="{{ url_for('static', filename='logo.png') }}" alt="image de logo" class="h-16 w-auto object-contain">
+            <img src="{{ url_for('static', filename='FSAE_LOGO.svg') }}" alt="image de logo" class="h-16 w-auto object-contain">
         </div>
 
         <!-- 2. Liens de navigation centrés -->
@@ -37,10 +37,15 @@
     </main>
     <footer class="mt-auto">
         <div class="flex justify-center items-center bg-zinc-800 text-gray-300 p-4">
-            <button class="bouton_insta"></button>
+            
             <div class="flex flex-col items-center ml-4">
-                <p>Email : info@uqacracing.ca</p>
+                <div class="flex items-center space-x-4">
+                    <a class="bouton_insta" href="https://www.instagram.com/fsae.uqac/" target="_blank" rel="noopener" aria-label="Instagram"></a>
+                    <a class="bouton_gmail" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=formuleuqac@gmail.com" target="_blank" rel="noopener" aria-label="Envoyer un courriel"></a>
+                </div>
+                <p>Email : formuleuqac@gmail.com</p>
                 <p> adresse : 555, boulevard de l'Université, Chicoutimi (Québec) Canada</p>
+                <p> local : P1-3005</p>
                 <p>&copy; 2026 Uqac Racing. Tous droits réservés.</p>
             </div>
             
@@ -80,6 +85,20 @@
         width: 50px;
         height: 50px;
         background-image: url("{{ url_for('static', filename='insta.png') }}");
+        background-size: cover;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .bouton_gmail{
+        position: fixed;
+        bottom: 20px;
+        right: 80px;
+        width: 50px;
+        height: 50px;
+        display: inline-flex;
+        z-index: 20;
+        background-image: url("{{ url_for('static', filename='gmail-logo-verte.png') }}");
         background-size: cover;
         border: none;
         border-radius: 50%;
