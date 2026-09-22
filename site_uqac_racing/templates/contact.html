@@ -2,5 +2,28 @@
 {% block title %} contact {% endblock %}
 
 {% block content %} 
+<div class="flex flex-col items-center justify-center h-screen text-green-500">
+    <h1 class="text-4xl font-bold mb-4">suivez-nous</h1>
+    <div>
+        <p>Nous suivre sur les réseaux sociaux pour ne rater aucune actualité !</p>
 
+    </div>
+    <div class="mt-4">
+        
+     <button class="bouton_insta", onclick="window.open('https://www.instagram.com/fsae.uqac/', '_blank')">Instagram</button>
+    </div>
+</div>
+<style>
+    .bouton_insta {
+        background-color: #236837;
+        color: white;
+        background-image: url("{{ url_for('static', filename='insta.png') }}");
+        background-size: cover;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+</style>
 {% endblock %}

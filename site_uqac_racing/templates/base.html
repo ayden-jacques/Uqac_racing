@@ -2,7 +2,7 @@
 <html lang="en">
 <script src="https://cdn.tailwindcss.com"></script>
 
-<body class = "min-h-screen bg-gradient-to-b from-neutral-700 via-neutral-750 to-neutral-800">
+<body class="min-h-screen flex flex-col bg-gradient-to-b from-neutral-700 via-neutral-750 to-neutral-800">
     <header class="w-full flex items-center bg-zinc-800 text-gray-300 p-4">
   
         <!-- 1. Conteneur Logo (utilisez w-auto pour laisser le logo prendre sa place) -->
@@ -24,21 +24,30 @@
     
     
     
-    <main>
-       
-        <div class="texte">
-            
-            <img class="image" src="{{ url_for('static', filename='background.png') }}" alt="logo">
-        
-            
+    <main class="relative flex-1 overflow-x-hidden">
+        <img class="image" src="{{ url_for('static', filename='image_fond.png') }}" alt="">
+
+        <div class="texte relative z-10">
             <div >
                 
                 {% block content%} {%endblock%}
             </div>
             
         </div>
-    
+    </main>
+    <footer class="mt-auto">
+        <div class="flex justify-center items-center bg-zinc-800 text-gray-300 p-4">
+            <button class="bouton_insta"></button>
+            <div class="flex flex-col items-center ml-4">
+                <p>Email : info@uqacracing.ca</p>
+                <p> adresse : 555, boulevard de l'Université, Chicoutimi (Québec) Canada</p>
+                <p>&copy; 2026 Uqac Racing. Tous droits réservés.</p>
+            </div>
+            
+        </div>
+    </footer>
 </body>
+
 </html>
 <style>
     .liens{
@@ -57,12 +66,24 @@
 
     .image{
         position: absolute;
-        top: 10;
+        top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        z-index: -1;
+        z-index: 0;
+    }
+    .bouton_insta{
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background-image: url("{{ url_for('static', filename='insta.png') }}");
+        background-size: cover;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
     }
 
 </style>
